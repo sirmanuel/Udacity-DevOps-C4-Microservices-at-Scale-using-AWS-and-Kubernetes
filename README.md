@@ -1,25 +1,10 @@
-<include a CircleCI status badge, here>
+[![pipeline status](https://gitlab.com/public-projects8352006/udacity-projects/cloud-devops-engineer/c4-microservices-at-scale-using-aws-and-kubernetes/badges/main/pipeline.svg)](https://gitlab.com/public-projects8352006/udacity-projects/cloud-devops-engineer/c4-microservices-at-scale-using-aws-and-kubernetes)
 
 ## Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
 
 You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
-
-### Project Tasks
-
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
-
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
 
 ---
 
@@ -40,24 +25,27 @@ source .devops/bin/activate
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh` 
+3. Run in Kubernetes (portforward):  `./run_kubernetes.sh` 
+4. Run in Kubernetes (expose via nodeport):  `./run_kubernetes_nodeport.sh` 
 
-Hint to Run in Kubernetes:  
-Initially, your pod may be in the process of being created, as indicated by STATUS: ContainerCreating, but you just have to wait a few minutes until the pod is ready, then you can run the script again. 
-Waiting: You can check on your pod’s status with a call to kubectl get pod and you should see the status change to Running. Then you can run the full ./run_kuberenets.sh script again. 
+### Execute Data
 
-### Kubernetes Steps
-
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
-
+1. Execute standalone:  `./make_prediction_local`
+2. Execute in Docker:  `./make_prediction_docker.sh`
+3. Execute in Kubernetes (portforward):  `./make_prediction_docker.sh` 
+4. Execute in Kubernetes (expose via nodeport):  `./make_prediction_nodeport.sh` 
 
 ### Cleanup 
+
+1. Cleanup in Docker:  `./stop_kubernetes.sh`
+2. Cleanup in Kubernetes (portforward):  `./stop_kubernetes.sh` 
+3. Cleanup in Kubernetes (expose via nodeport):  `./stop_kubernetes_nodeport.sh` 
+
+### Cleanup Minikube
 After you’re done deploying your containerized application and making test predictions via Kubernetes cluster, you should clean up your resources and delete the kubernetes cluster with a call to 
 > minikube delete.
 
 You can also pause your work and save the cluster state with a call to
 > minikube stop.
+
 

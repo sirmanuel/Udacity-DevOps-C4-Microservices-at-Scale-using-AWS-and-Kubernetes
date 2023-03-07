@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 ## Complete the following steps to get Docker running locally
+app=sklearn
 
 # Step 1:
 # Build image and add a descriptive tag
-docker build -t sklearn . 
+docker build -t $app . 
 
 # Step 1b:
 #delete intermediate images
@@ -16,5 +17,5 @@ docker image ls
 
 # Step 3: 
 # Run app
-docker run --rm --name c-sklearn -p 8000:80 sklearn
+docker run --rm --name c-sklearn -p 8000:80 $app
 

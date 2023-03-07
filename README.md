@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.com/public-projects8352006/udacity-projects/cloud-devops-engineer/c4-microservices-at-scale-using-aws-and-kubernetes/badges/main/pipeline.svg)](https://gitlab.com/public-projects8352006/udacity-projects/cloud-devops-engineer/c4-microservices-at-scale-using-aws-and-kubernetes)
+[![<pipeline status>](https://circleci.com/gh/sirmanuel/Udacity-DevOps-C4-Microservices-at-Scale-using-AWS-and-Kubernetes.svg?style=svg)](https://app.circleci.com/pipelines/github/sirmanuel/Udacity-DevOps-C4-Microservices-at-Scale-using-AWS-and-Kubernetes)
 
 ## Project Overview
 

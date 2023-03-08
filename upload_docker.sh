@@ -17,5 +17,5 @@ docker tag sklearn $dockerpath:latest
 
 # Step 3:
 # Push image to a docker repository
-cat ~/environment/my_docker_pw.txt | docker login --username $dockerID --password-stdin
+cat ./../my_docker_pw.txt | docker login --username $dockerID --password-stdin
 docker push $dockerpath:latest

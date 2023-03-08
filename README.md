@@ -21,6 +21,14 @@ source .devops/bin/activate
 ```
 * Run `make install` to install the necessary dependencies
 
+### Configure Kubernetes to Run Locally
+
+You should have a virtual machine like VirtualBox and minikube installed, as per the project environmet instructions. To start a local cluster, type the terminal command: 
+` minikube start`.
+
+After minikube starts, a cluster should be running locally. You can check that you have one cluster running by typing 
+` kubectl config view ` where you should see at least one cluster with a certificate-authority and server.
+
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
@@ -37,15 +45,15 @@ source .devops/bin/activate
 
 ### Cleanup 
 
-1. Cleanup in Docker:  `./stop_kubernetes.sh`
+1. Cleanup Docker Images: `docker system prune -a`
 2. Cleanup in Kubernetes (portforward):  `./stop_kubernetes.sh` 
 3. Cleanup in Kubernetes (expose via nodeport):  `./stop_kubernetes_nodeport.sh` 
 
 ### Cleanup Minikube
 After you’re done deploying your containerized application and making test predictions via Kubernetes cluster, you should clean up your resources and delete the kubernetes cluster with a call to 
-> minikube delete.
+`minikube delete`
 
 You can also pause your work and save the cluster state with a call to
-> minikube stop.
+`minikube stop`
 
 
